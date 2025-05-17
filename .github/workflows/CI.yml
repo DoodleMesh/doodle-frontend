@@ -40,4 +40,4 @@ jobs:
         git config user.email "kushan.arora23@gmail.com"
         git add .
         git commit -m "Updated image tag to ${{ github.sha }}"
-        git push  https://${PAT}@github.com:DoodleMesh/argo-frontend.git main
+        git push https://${PAT}@github.com/DoodleMesh/argo-frontend.git main
