@@ -29,7 +29,7 @@ jobs:
 
     - name: Clone ops-repo & push image tags
       env:  
-        PAT: {{ secrets.PAT }}
+        PAT: ${{ secrets.PAT }}
       run: | 
         git clone https://github.com/DoodleMesh/argo-frontend
         cd argo-frontend
