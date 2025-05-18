@@ -22,18 +22,19 @@ function App() {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Pencil className="h-8 w-8 text-indigo-600" />
-            <span className="text-2xl font-bold text-gray-900">Excelidraw</span>
+            <span className="text-2xl font-bold text-gray-900">DoodleMesh</span>
           </div>
           <div className="flex items-center space-x-6">
             <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
-            <a href="#about" className="text-gray-600 hover:text-gray-900">About</a>
-            <a href="https://github.com" className="text-gray-600 hover:text-gray-900 flex items-center space-x-1">
+            <a href="https://github.com/DoodleMesh" className="text-gray-600 hover:text-gray-900 flex items-center space-x-1">
               <Github className="h-5 w-5" />
               <span>GitHub</span>
             </a>
+            <Link href={'/signin'}>
             <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
               Try Now
             </button>
+            </Link>
           </div>
         </nav>
       </header>
@@ -73,8 +74,8 @@ function App() {
 
       {/* Features Section */}
       <section id="features" className="bg-gray-50 py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Excelidraw?</h2>
+        <div className="container text-zinc-950 mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose DoodleMesh?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
               icon={Pencil}
@@ -107,7 +108,7 @@ function App() {
             Ready to Start Creating?
           </h2>
           <p className="text-indigo-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of users who are already creating beautiful diagrams with Excelidraw.
+            Join thousands of users who are already creating beautiful diagrams with DoodleMesh.
           </p>
           <button className="bg-white text-indigo-600 px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors">
             Get Started for Free
@@ -121,7 +122,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Pencil className="h-6 w-6 text-indigo-600" />
-              <span className="text-xl font-bold text-gray-900">Excelidraw</span>
+              <span className="text-xl font-bold text-gray-900">DoodleMesh</span>
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-600 hover:text-gray-900">Terms</a>
@@ -130,7 +131,7 @@ function App() {
             </div>
           </div>
           <div className="mt-8 text-center text-gray-500">
-            © {new Date().getFullYear()} Excelidraw. All rights reserved.
+            © {new Date().getFullYear()} DoodleMesh. All rights reserved.
           </div>
         </div>
       </footer>
