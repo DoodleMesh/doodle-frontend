@@ -14,19 +14,22 @@ export default function Signin (){
     const [loading, setLoading] = useState(false);
     const usernameRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
+    let response = null;
     async function signin(){
     const password = passwordRef.current?.value
     const username = usernameRef.current?.value
-    try {
-    const response = await axios.post(BACKEND_URL + "/signin",{
-            username,
-            password
-        
-    });
+    console.log(username);
+    console.log(password);
+     try{
+            response = await axios.post(`${BACKEND_URL}/signin`,{
+                username,
+                password,
+        });
         const jwt = response?.data.token;
         console.log(response)
         console.log(jwt);
         if(jwt){
+        console.log("hi")
         localStorage.setItem('token', jwt);
         router.push('/rooms')
         }
@@ -51,7 +54,7 @@ export default function Signin (){
               <h1 className="text-2xl font-bold text-gray-900">Sign In</h1>
             </div>
   
-            <form className="space-y-6 text-purple-600">
+            <div className="space-y-6 text-purple-600">
               <div>
                 <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700">
                   Email address
@@ -86,11 +89,12 @@ export default function Signin (){
               </div>
               <button
                 onClick={signin}
+                disabled={loading}
                 className="w-full px-4 py-2 font-medium text-white transition-colors bg-purple-600 rounded-lg hover:bg-purple-700"
               >
-                Sign In
+               {loading ? "loading..." : "Sign in"} 
               </button>
-            </form>
+            </div>
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 Don't have an account?{' '}

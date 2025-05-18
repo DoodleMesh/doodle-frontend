@@ -54,7 +54,7 @@ export default function Signup (){
               <h1 className="text-2xl font-bold text-gray-900">Sign Up</h1>
             </div>
   
-            <form className="space-y-6 text-purple-600">
+            <div className="space-y-6 text-purple-600">
               <div>
                 <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700">
                   Email address
@@ -101,11 +101,12 @@ export default function Signup (){
               </div>
               <button
                 onClick={Signup}
+                disabled={loading}
                 className="w-full px-4 py-2 font-medium text-white transition-colors bg-purple-600 rounded-lg hover:bg-purple-700"
               >
-                Sign Up
+                {loading? "loading..." : "Sign Up"}
               </button>
-            </form>
+            </div>
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
                 Already have an account?{' '}
