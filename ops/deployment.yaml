@@ -16,6 +16,13 @@ spec:
     spec:
       containers:
         - name: frontend
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           image: kush233/draw-frontend:49bba63e6a2f8e55b2d013c8658ccbf2a92631b2
           imagePullPolicy: Always
           ports:
